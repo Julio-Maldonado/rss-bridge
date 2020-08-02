@@ -61,6 +61,7 @@ class ListAction extends ActionAbstract {
 		if (in_array($origin, $allowed_domains)) {
 			header('Access-Control-Allow-Origin: ' . $origin);
 		}
+		header('Access-Control-Allow-Origin: *');
 		echo json_encode($list, JSON_PRETTY_PRINT);
 	}
 }

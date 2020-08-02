@@ -112,6 +112,7 @@ abstract class FormatAbstract implements FormatInterface {
 		if (in_array($origin, $allowed_domains)) {
 			header('Access-Control-Allow-Origin: ' . $origin);
 		}
+		header('Access-Control-Allow-Origin: *');
 		
 		header('Content-Type: ' . $this->contentType);
 	}
