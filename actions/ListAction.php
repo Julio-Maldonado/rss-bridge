@@ -51,6 +51,16 @@ class ListAction extends ActionAbstract {
 		$list->total = count($list->bridges);
 
 		header('Content-Type: application/json');
+		$origin = $_SERVER['HTTP_ORIGIN'];
+		$allowed_domains = [
+			'http://127.0.0.1:3000',
+			'http://127.0.0.1:3001',
+			'rgvcovid19cases.com'
+		];
+
+		if (in_array($origin, $allowed_domains)) {
+			header('Access-Control-Allow-Origin: ' . $origin);
+		}
 		echo json_encode($list, JSON_PRETTY_PRINT);
 	}
 }
