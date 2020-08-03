@@ -62,6 +62,8 @@ class ListAction extends ActionAbstract {
 			header('Access-Control-Allow-Origin: ' . $origin);
 		}
 		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: GET, OPTIONS, POST');
+  		header('Access-Control-Allow-Headers: Content-Type, Authorization');
 		echo json_encode($list, JSON_PRETTY_PRINT);
 	}
 }

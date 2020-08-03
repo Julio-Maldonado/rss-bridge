@@ -487,6 +487,8 @@ class FacebookBridge extends BridgeAbstract {
 			header('Access-Control-Allow-Origin: ' . $origin);
 		}
 		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: GET, OPTIONS, POST');
+  		header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 		$message = <<<EOD
 <form method="post" action="?{$_SERVER['QUERY_STRING']}">
